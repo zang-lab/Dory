@@ -166,8 +166,8 @@ calculate_euclidean_distance <- function(dataset, region_num){
 WilcoxonP <- function(k, ct){
   if(length(which(!is.na(as.numeric(get(ct[1])[k,]))))>0 & 
      length(which(!is.na(as.numeric(get(ct[2])[k,]))))>0){
-    pgreat <- wilcox.test(as.numeric(get(ct[1])[k,]), as.numeric(get(ct[2])[k,]), paired=FALSE, alternative=c("greater"))$p.value
-    pless <- wilcox.test(as.numeric(get(ct[1])[k,]), as.numeric(get(ct[2])[k,]), paired=FALSE, alternative=c("less"))$p.value
+    pgreat <- wilcox.test(as.numeric(get(ct[1])[k,]), as.numeric(get(ct[2])[k,]), paired=FALSE, alternative=c("greater"), exact=FALSE)$p.value
+    pless <- wilcox.test(as.numeric(get(ct[1])[k,]), as.numeric(get(ct[2])[k,]), paired=FALSE, alternative=c("less"), exact=FALSE)$p.value
   }else{
     pgreat <- NA
     pless <- NA
