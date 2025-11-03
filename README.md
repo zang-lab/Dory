@@ -13,16 +13,17 @@ git clone https://github.com/mzxj/Dory.git && cd Dory
 ```
 chmod +x Dory
 ```
-3. Install required R packages manually, one by one, for the most reliable setup, including `ggplot2`, `optparse`, `reshape2`, `dplyr`, `data.table`, `future`, `parallel`, and `furrr`. Alternatively, you can install all of them automatically using the provided script:
+3. To make Dory globally runnable, add its path to your environment's PATH variable. Append `export PATH=/path/to/Dory/:$PATH` to your `~/.bashrc` or `~/.bash_profile`. Replace `/path/to/Dory` with the actual path to the Dory directory. Then reload your shell:
+```
+source ~/.bashrc  # or source ~/.bash_profile
+```
+4. Install required R packages manually, one by one, for the most reliable setup, including `ggplot2`, `optparse`, `reshape2`, `dplyr`, `data.table`, `future`, `parallel`, and `furrr`. Alternatively, you can install all of them automatically using the provided script:
 ```
 Rscript ./R/install_packages.R
 ```
 or inside R: ```source("./R/install_packages.R")```. Note: If installation fails for some packages in all of the above methods, please update your R installation to a newer version (R ≥ 4.4 recommended).
 
-4. To make Dory globally runnable, add its path to your environment's PATH variable. Append `export PATH=/path/to/Dory/:$PATH` to your `~/.bashrc` or `~/.bash_profile`. Replace `/path/to/Dory` with the actual path to the Dory directory. Then reload your shell:
-```
-source ~/.bashrc  # or source ~/.bash_profile
-```
+
 ### Verify installation
 Test the Dory is available globally:
 ```
